@@ -125,10 +125,11 @@ const HomeScreen = ({ navigation, route }) => {
   }, [isPlaying]);
 
   return (
-    <Layout level="4" style={{ flex: 1, paddingTop: 25 }}>
+    <Layout level="4" style={{ flex: 1, paddingTop: 25,backgroundColor: "#b20a33" }}>
       <Layout
         level="4"
         style={{
+          backgroundColor: "#b20a33",
           alignItems: "center",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -155,7 +156,10 @@ const HomeScreen = ({ navigation, route }) => {
             image={artist.image}
             backgroundColor={artist.backgroundColor}
             ImageContainerStyle={{
-              borderRadius: 15,
+              borderRadius: 250,
+              overflow: "hidden",
+              borderWidth: 3,
+              borderColor: "white",
               width: COVER_SIZE,
               height: COVER_SIZE,
             }}
