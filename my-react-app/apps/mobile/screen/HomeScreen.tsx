@@ -125,11 +125,11 @@ const HomeScreen = ({ navigation, route }) => {
   }, [isPlaying]);
 
   return (
-    <Layout level="4" style={{ flex: 1, paddingTop: 25 , backgroundColor: "black" }}>
+    <Layout level="4" style={{ flex: 1, paddingTop: 25 , backgroundColor: "blue" }}>
       <Layout
         level="4"
         style={{
-          backgroundColor: "black",
+          backgroundColor: "blue",
           alignItems: "center",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -156,7 +156,10 @@ const HomeScreen = ({ navigation, route }) => {
             image={artist.image}
             backgroundColor={artist.backgroundColor}
             ImageContainerStyle={{
-              borderRadius: 15,
+              borderRadius: 100,
+              overflow: "hidden",
+             borderWidth: 3,
+             borderColor: "red",
               width: COVER_SIZE,
               height: COVER_SIZE,
             }}
@@ -217,7 +220,7 @@ const HomeScreen = ({ navigation, route }) => {
           
           <RoundButtonMusic
                       backgroundColor={theme["background-basic-color-2"]}
-            icon={<Feather name="chevron-left" size={24} color="white" />}
+            icon={<Feather name="chevron-left" size={24} color="red" />}
             onClickButton={async () => {
               await playbackObject
                 ?.setPositionAsync(
@@ -234,9 +237,9 @@ const HomeScreen = ({ navigation, route }) => {
             backgroundColor={theme["background-basic-color-2"]}
             icon={
               isPlaying ? (
-                <FontAwesome name="pause" size={24} color="white" />
+                <FontAwesome name="pause" size={24} color="red" />
               ) : (
-                <FontAwesome name="play" size={24} color="white" />
+                <FontAwesome name="play" size={24} color="red" />
               )
             }
             onClickButton={async () => {
@@ -254,7 +257,7 @@ const HomeScreen = ({ navigation, route }) => {
           />
           <RoundButtonMusic
             backgroundColor={theme["background-basic-color-2"]}
-            icon={<Feather name="chevron-right" size={24} color="white" />}
+            icon={<Feather name="chevron-right" size={24} color="red" />}
             onClickButton={async () => {
               await playbackObject
                 ?.setPositionAsync(
@@ -301,6 +304,8 @@ const HomeScreen = ({ navigation, route }) => {
                   padding: 20,
                   borderRadius: 20,
                   textDecorationLine: 'underline',
+                  color:'red',
+                  backgroundColor:'grey'
                 }}
               >
                 Up Next
