@@ -198,7 +198,7 @@ const HomeScreen = ({ navigation, route }) => {
 
         <View
           style={{
-            paddingHorizontal: 24,
+            paddingHorizontal: 20,
             flexDirection: "row",
             justifyContent: "space-between",
           }}
@@ -214,7 +214,7 @@ const HomeScreen = ({ navigation, route }) => {
             paddingHorizontal: 24,
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "center",
           }}
         >
           
