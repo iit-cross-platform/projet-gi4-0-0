@@ -46,6 +46,43 @@ export const Basic: SearchInputStory = (args) => {
   );
 };
 
+export const ThirdSearchInput: SearchInputStory = (args) => {
+  const [inputValue, setInputValue] = useState('');
+  const [searchedValue, setSearchedValue] = useState('');
+
+  return (
+    <Layout level="4" style={{ padding: 24 }}>
+      <SearchInput
+        {...args}
+        value={inputValue}
+        onChangeText={(e) => setInputValue(e)}
+        onSearchPress={() => {
+          setSearchedValue(inputValue);
+        }}
+      />
+      <Text style={{ marginVertical: 16 }}>Input Text: {inputValue}</Text>
+      <Text>Search text: {searchedValue}</Text>
+    </Layout>
+  );
+};
+export const FourthSearchInput: SearchInputStory = (args) => {
+  const [inputValue, setInputValue] = useState('');
+  const [searchedValue, setSearchedValue] = useState('');
+
+  return (
+    <Layout level="4" style={{ padding: 24 }}>
+      <SearchInput
+        {...args}
+        value={inputValue}
+        onChangeText={(e) => setInputValue(e)}
+        onSearchPress={() => {
+          setSearchedValue(inputValue);
+        }}
+      />
+    
+    </Layout>
+  );
+};
 export const InputDimensions: SearchInputStory = (args) => {
   return (
     <Layout level="4" style={{ padding: 24 }}>

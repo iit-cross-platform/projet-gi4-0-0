@@ -125,11 +125,11 @@ const HomeScreen = ({ navigation, route }) => {
   }, [isPlaying]);
 
   return (
-    <Layout level="4" style={{ flex: 1, paddingTop: 25,backgroundColor: "#b20a33" }}>
+    <Layout level="4" style={{ flex: 1, paddingTop: 25 , backgroundColor: "black" }}>
       <Layout
         level="4"
         style={{
-          backgroundColor: "#b20a33",
+          backgroundColor: "black",
           alignItems: "center",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -156,10 +156,7 @@ const HomeScreen = ({ navigation, route }) => {
             image={artist.image}
             backgroundColor={artist.backgroundColor}
             ImageContainerStyle={{
-              borderRadius: 250,
-              overflow: "hidden",
-              borderWidth: 3,
-              borderColor: "white",
+              borderRadius: 15,
               width: COVER_SIZE,
               height: COVER_SIZE,
             }}
@@ -217,21 +214,9 @@ const HomeScreen = ({ navigation, route }) => {
             justifyContent: "space-between",
           }}
         >
+          
           <RoundButtonMusic
-            icon={<Feather name="chevrons-left" size={24} color="white" />}
-            onClickButton={async () => {
-              await playbackObject
-                ?.setPositionAsync(
-                  currentDuration - 10000 < 0 ? 0 : currentDuration - 10000
-                )
-                .then((status: AVPlaybackStatusSuccess) =>
-                  setCurrentDuration((val) => status.positionMillis)
-                );
-              //   setCurrentDuration((oldValue) => oldValue - 10);
-            }}
-            size={50}
-          />
-          <RoundButtonMusic
+                      backgroundColor={theme["background-basic-color-2"]}
             icon={<Feather name="chevron-left" size={24} color="white" />}
             onClickButton={async () => {
               await playbackObject
@@ -268,6 +253,7 @@ const HomeScreen = ({ navigation, route }) => {
             size={70}
           />
           <RoundButtonMusic
+            backgroundColor={theme["background-basic-color-2"]}
             icon={<Feather name="chevron-right" size={24} color="white" />}
             onClickButton={async () => {
               await playbackObject
@@ -283,22 +269,7 @@ const HomeScreen = ({ navigation, route }) => {
             }}
             size={50}
           />
-          <RoundButtonMusic
-            icon={<Feather name="chevrons-right" size={24} color="white" />}
-            onClickButton={async () => {
-              await playbackObject
-                ?.setPositionAsync(
-                  currentDuration + 10000 > maxDuration
-                    ? maxDuration
-                    : currentDuration + 10000
-                )
-                .then((status: AVPlaybackStatusSuccess) =>
-                  setCurrentDuration((oldValue) => status.positionMillis)
-                );
-              //   setCurrentDuration((oldValue) => oldValue + 10);
-            }}
-            size={50}
-          />
+      
         </View>
         <View
           style={{
@@ -328,8 +299,8 @@ const HomeScreen = ({ navigation, route }) => {
               <Text
                 style={{
                   padding: 20,
-                  backgroundColor: theme["background-basic-color-2"],
                   borderRadius: 20,
+                  textDecorationLine: 'underline',
                 }}
               >
                 Up Next
